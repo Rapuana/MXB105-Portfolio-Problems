@@ -1,0 +1,94 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tikz}
+\usepackage{csquotes}
+
+\begin{document}
+\begin{center}
+\Large{\textbf{MXB105: Calculus of One and Two Variables}}\\
+\Large{\textbf{Portfolio 1}}\\
+\Large{\textbf{Samuel Dudley -- 09479929}}\\
+\end{center}
+\rule{\textwidth}{1pt}
+
+\section*{The $\epsilon - \delta$ Definition of limit}
+\subsection*{Question 1}
+Show that
+$$\left| \frac{64}{3x-5} - 4 \right| = \left| \frac{12}{3x-5} \right| \cdot |x-7|$$
+
+LHS = RHS
+\begin{align*}
+\left| \frac{64}{3x-5} - 4 \right| &= \left| \frac{64}{3x-5} - 4 \cdot \frac{3x-5}{3x-5} \right|\\
+&= \left| \frac{64-4(3x-5)}{3x-5} \right|\\
+&= \left| \frac{64-12x+20}{3x-5} \right|\\
+&= \left| \frac{-(12x-84)}{3x-5} \right|\\
+&= \left| \frac{12(x-7)}{3x-5} \right|\\
+&= \left| \frac{12}{3x-5} \right| \cdot |x-7| 
+\end{align*}
+
+\subsection*{Question 2}
+
+We want to know whether $\displaystyle \left| \frac{12}{3x-5} \right|$ is bounded if $\left| x-7 \right|< 6$.\\
+We begin by noting that the function $\left| \frac{12}{3x-5} \right|$ is bounded if its domain does not include $\frac{5}{3}$. 
+To find the domain under the constraint that $\left| x-7 \right|< 6$, we consider that
+$$\left| x-7 \right| < 6 \leftrightarrow -6 < x-7 < 6 $$
+$$\therefore \left(-6 + 7 \right) < x < \left(6 + 7\right) $$
+$$\therefore 1 < x < 13 $$
+Now we have a domain for the function $\left| \frac{12}{3x-5} \right|$. This domain includes $x = \frac{5}{3}$ and therefore $\left| \frac{12}{3x-5} \right|$ is not bounded. \\
+
+\subsection*{Question 3}
+
+We want to know whether $\displaystyle \left| \frac{12}{3x-5} \right|$ is bounded if $\left| x-7 \right|< 2$.\\
+We begin by noting that the function $\left| \frac{12}{3x-5} \right|$ is bounded if its domain does not include $\frac{5}{3}$. 
+To find the domain under the constraint that $\left| x-7 \right|< 2$, we consider that
+$$\left| x-7 \right| < 2 \leftrightarrow -2 < x-7 < 2 $$
+$$\therefore \left(-2 + 7 \right) < x < \left(2 + 7\right) $$
+$$\therefore 5 < x < 9$$
+Now we have a domain for the function $\left| \frac{12}{3x-5} \right|$. This domain
+does not include $x = \frac{5}{3}$ and therefore $\left| \frac{12}{3x-5} \right|$ is
+bounded. \\
+As to where the function is bounded, we find this by evaluating the function $\left| \frac{12}{3x-5} \right|$ at
+the minimum and maximum values for $x$ in its domain. Thus
+\begin{align*}
+\left| \frac{12}{3 \times 9 -5} \right| &< \left| \frac{12}{3x-5} \right| <\left| \frac{12}{3 \times 5 -5} \right|\\
+\frac{12}{22} &< \left| \frac{12}{3x-5} \right| < \frac{12}{10} \\
+\frac{6}{11}  &< \left| \frac{12}{3x-5} \right| < \frac{6}{5}\\
+\end{align*}
+
+Therefore, the bounds of $\displaystyle \left| \frac{12}{3x-5} \right|$ are $\displaystyle \left( \frac{6}{11}, \frac{6}{5}\right)$.
+
+\subsection*{Question 4}
+
+We wish to show that 
+
+$$\lim_{x\to7} \frac{64}{3x-5} = 4$$
+\textbf{Proof using the $\epsilon - \delta$ definition of a limit}
+Then let $\epsilon,\delta \in \mathbb{R}$ such that $\epsilon,\delta > 0$.
+We can prove $\lim_{x\to7} \left| \frac{64}{3x-5} \right| = 4$ by showing that, for any given $\epsilon$, we can find always a $\delta$ which satisfies the following:
+$$ \left| \frac{64}{3x-5}  - 4 \right| < \epsilon \text{ if } 0 <= \left| x - 7 \right| < \delta $$
+Now, let $\epsilon$ be given.\\
+
+\noindent From  \textit{Question 1} of  \textit{Portfolio 1}, it is known that
+$$ \left| \frac{64}{3x-5} - 4 \right| = \left| \frac{12}{3x-5} \right| \left|x-7\right|$$
+Therefore,
+$$  \left| \frac{64}{3x-5}  - 4 \right| < \epsilon \equiv \left| \frac{12}{3x-5} \right| \left|x-7\right| < \epsilon $$
+Since it is not convenient -- or even possible -- for us to deal with the $\displaystyle \left| \frac{12}{3x-5} \right|$ term algebraically, we will bound it. 
+We will do this by arbitrarily setting $\delta = 2$; that is, we will not accept any $\delta$ larger than two. 
+This will allow us to constrain the domain of $\displaystyle \left| \frac{12}{3x-5} \right|$, 
+since, according to our work in Part 3, 
+$$\left|x-7\right| < 2 \rightarrow 5 < x < 9$$
+$$\text{max}\left(\left| \frac{12}{3x-5} \right|\right) = \frac{6}{5} \text{ for } 5 < x < 9 $$
+Thus we will simply set $\left| \frac{12}{3x-5} \right| = \frac{6}{5}$, which gives us 
+\begin{align*}
+\frac{6}{5}\left|x-7\right| &< \epsilon\\
+\left| x-7 \right| &< \frac{5}{6}\epsilon
+\end{align*}
+From here it is obvious that we should set $\delta = \frac{5}{6}\epsilon$ and, for any given $\epsilon$, we should choose $\delta : \delta = \text{min}\left(2, \frac{5}{6}\epsilon\right)$. 
+Therefore, because we can always find a suitable $\delta$ for any $\epsilon$, provably $
+\displaystyle \lim_{x\to7} \left| \frac{64}{3x-5} \right| = 4$. \textbf{QED}.
+
+\end{document}

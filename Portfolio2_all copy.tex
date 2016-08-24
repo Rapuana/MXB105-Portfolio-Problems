@@ -1,0 +1,89 @@
+\newcommand*{\titleGP}{\begingroup % Create the command for including the title page in the document
+\centering % Center all text
+\vspace*{\baselineskip} % White space at the top of the page
+
+\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt} % Thick horizontal line
+\rule{\textwidth}{0.4pt}\\[\baselineskip] % Thin horizontal line
+
+{\LARGE Calculus of\\ One and Two Variables \\[0.3\baselineskip] Portfolio Question 2}\\[0.2\baselineskip] % Title
+
+\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt} % Thin horizontal line
+\rule{\textwidth}{1.6pt}\\[\baselineskip] % Thick horizontal line
+
+\scshape % Small caps
+Continuity and Differentiability (4 marks) \\[\baselineskip] % Tagline(s) or further description
+Date: \today \par % Location and year
+
+\vspace*{2\baselineskip} % Whitespace between location/year and editors
+
+Edited by \\[\baselineskip]
+{\Large \textsc{Samuel Dudley -- 09479929} \\ 
+\textsc{Mitchell Johnson -- 09656383} \\ 
+\textsc{Alan Pearse -- 09006371} \\ 
+\textsc{Ashneel Sharma -- 09458484} \par} % Editor list
+{\itshape Queensland University of Technology \\ Brisbane\par} % Editor affiliation
+
+\vfill % Whitespace between editor names and publisher logo
+
+{\large MXB105}\par % Publisher
+\pagebreak
+\endgroup}
+
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{tikz}
+\usepackage{csquotes}
+
+\begin{document}
+
+\titleGP
+\section*{Question 1}
+We wish to justify that the officer was correct in giving the suspicious driver a ticket by using the mean value theorem to prove the speed of the driver over the 30 km stretch of highway. The mean value theorem is
+$$f'(c) = \frac{f(b)-f(a)}{b-a},$$
+where $f(b)$ is a function of displacement after a length of time, therefore $f(b) = 30$km, and $b$ is the time input into this function, which is 16 minutes, $b=\frac{16}{60}$ hours. $f(a)$ is the inital displacement (being $0$) and $a$ being the initial time, which is also $0$. 
+\begin{align*}
+f'(c) &= \frac{30-0}{\frac{16}{60}-0}\\
+&= \frac{30 \cdot 60}{16}\\
+&= 112.5\ \mbox{km/hr}
+\end{align*}
+Thus it is proven that the suspicious car was exceeding the speed limit of $100$ km/hr. 
+
+\section*{Question 2}
+This time the scenario is the same with a suspicious car travelling 30km, except taking 20 minutes instead of 16. We wish to find whether the office is justified to give a ticket to the driver. Once again this can be done using the mean value theorem same as before and making $b$ equal to $\frac{20}{60} = \frac{1}{3}$ hours.
+\begin{align*}
+f'(c) &= \frac{f(b)-f(a)}{b-a}\\
+&= \frac{30-0}{\frac{1}{3}-0}\\
+&= \frac{30 \cdot 3}{1}\\
+&= 90 \ \mbox{km/hr}
+\end{align*}
+Therefore the officer would not be justified in giving the suspicious driver a ticket for exceeding the speed limit of $100$ km/hr.
+
+\section*{Question 3}
+
+\section*{Question 4}
+\subsection*{The Mean and Intermediate value theorems}
+
+We wish to show that a man who ran a half marathon in 84 minutes must have been running at exactly 9 miles per hour at least twice during the race.
+
+Let $f(x)$ be the function giving the distance in miles that the man has run at $x$ hours. We assume that $f(x)$ is continuous and differentiable over the closed interval $0 \leqslant x \leqslant \frac{84}{60}$, since a man running a marathon must cover the entire distance with his feet; he cannot jump around or teleport.
+
+We know that $f(x = 0) = 0$ and $f(x = \frac{84}{60}) = 13.1$. Therefore, his average velocity $v$ is
+\begin{equation*}
+\begin{aligned}
+v &= \frac{f(\frac{84}{60}) - f(0)}{\frac{84}{60}-0}\\
+&= \frac{13.1}{\frac{84}{60}}\\
+&= \frac{13.1 \times 60}{84}\\
+&\approx 9.357 \text{ miles per hour}
+\end{aligned}
+\end{equation*}
+By the Mean Value Theorem, then, the man must have achieved a velocity of 9.357 miles per hour at least once during his run. In order to get to this speed he had to travel at 9 miles per hour at least once.
+
+But we should also note that $f'(x = 0) = 0 \text{ and } f'(x = \frac{84}{60} = 0)$. This means that the average slope of $f'(x)$ is 0 during his run. By Rolle's Theorem, this means that $f''(x)$ has a stationary point in the interval $0 \leqslant x \leqslant \frac{84}{60}$; in this case the stationary point is a maximum in the man's velocity, which we know is at least as high as 9.357 miles per hour. Therefore the man must have been running at 9 miles per hour at some point before hitting this peak speed, and he must have been running 9 miles per hour again as he slowed down to 0 miles per hour at the finish line. 
+
+This shows that he ran at 9 miles per hour at least twice during the race.
+
+\end{document}
